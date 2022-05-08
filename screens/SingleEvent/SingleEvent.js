@@ -1,12 +1,46 @@
 import React from 'react';
 import {View, Text,StatusBar} from 'react-native';
+import {colors, fonts, sizes} from "../../constant";
+
+//Screens
+import SEHeader from "./components/SEHeader/SEHeader";
+import SECalender from "./components/SECalender/SECalender";
+import SELocation from "./components/SELocation/SELocation";
+import SERefund from "./components/SERefund/SERefund";
+import SEAbout from "./components/SEAbout/SEAbout";
+import SEFooter from "./components/SEFooter/SEFooter";
+
+
 
 function SingleEvent() {
   return (
-    <View>
+    <View style={{position:'relative',height:'100%',backgroundColor:"white"}}>
       <StatusBar translucent backgroundColor='transparent' />
-      <Text>hello single event</Text>
+      <SEHeader />
+      <View style={{margin:15}}>
+          <Text style={{fontFamily:fonts.DmSans_Bold,color:colors.secondary,fontSize:sizes.h22}}>La Rosalia</Text>
+          <View style={{marginTop:20}}>
+            <SECalender />
+          </View>
+        <View style={{marginTop:30}}>
+          <SELocation />
+        </View>
+        <View style={{marginTop:30}}>
+          <SERefund />
+        </View>
+
+        <View style={{marginTop:40}}>
+          <SEAbout />
+        </View>
+      </View>
+
+      <View style={{position:'absolute',bottom:0,width:'100%'}}>
+        <SEFooter />
+      </View>
+
     </View>
   );
 }
 export default SingleEvent;
+
+
