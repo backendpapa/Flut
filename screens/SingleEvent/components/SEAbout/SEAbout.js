@@ -1,17 +1,18 @@
 import React from 'react'
 import {Icon} from "@rneui/base";
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity, useColorScheme} from 'react-native'
 import {colors, fonts, sizes} from "../../../../constant";
 
 function SEAbout(){
+  const theme=useColorScheme();
   const sea=se_about
   return (
     <View>
       <View >
         {/*  calender section*/}
         <View >
-          <Text style={[sea.text_1]} >About</Text>
-          <Text style={sea.text_2}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+          <Text style={[sea.text_1,{color:theme=='dark'?colors.white:colors.secondary}]} >About</Text>
+          <Text style={[sea.text_2,{color:theme=='dark'?colors.white:colors.secondary}]}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
 
         </View>
       </View>

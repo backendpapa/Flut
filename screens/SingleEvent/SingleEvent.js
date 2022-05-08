@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text,StatusBar} from 'react-native';
+import {View, Text, StatusBar, useColorScheme} from 'react-native';
 import {colors, fonts, sizes} from "../../constant";
 
 //Screens
@@ -13,12 +13,13 @@ import SEFooter from "./components/SEFooter/SEFooter";
 
 
 function SingleEvent() {
+  const theme=useColorScheme();
   return (
-    <View style={{position:'relative',height:'100%',backgroundColor:"white"}}>
+    <View style={{position:'relative',height:'100%',backgroundColor:theme=='dark'?colors.secondary:colors.white}}>
       <StatusBar translucent backgroundColor='transparent' />
       <SEHeader />
       <View style={{margin:15}}>
-          <Text style={{fontFamily:fonts.DmSans_Bold,color:colors.secondary,fontSize:sizes.h22}}>La Rosalia</Text>
+          <Text style={{fontFamily:fonts.DmSans_Bold,color:theme=='dark'?colors.white:colors.secondary,fontSize:sizes.h22}}>La Rosalia</Text>
           <View style={{marginTop:20}}>
             <SECalender />
           </View>

@@ -8,5 +8,9 @@ module.exports = {
   //  grey
   ultra: '#F2F2F2',
 //  green
-  green:"#0DCDAA"
+  green:"#0DCDAA",
+//  accent
+  accent:"#F0F6F5",
+//  orangr
+  orange:"#DF6119"
 };
