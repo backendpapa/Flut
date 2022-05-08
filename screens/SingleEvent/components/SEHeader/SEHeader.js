@@ -41,9 +41,6 @@ function SEHeader() {
 
             <TouchableOpacity
               style={{marginLeft: 10}}
-              onPress={() => {
-                setLike(!like);
-              }}
               activeOpacity={0.8}>
               <Icon
                 name={'ios-share-social-outline'}
@@ -54,7 +51,6 @@ function SEHeader() {
           </View>
         </View>
       </ImageBackground>
-      <Text>hEADERfff</Text>
     </View>
   );
 }
