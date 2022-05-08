@@ -14,7 +14,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Screens
 import SplashScreen from './screens/splash/SplashScreen/SplashScreen';
-
+import SingleEvent from './screens/SingleEvent/SingleEvent'
 
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -41,7 +41,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown:false}}>
 
-        <Stack.Screen name="Welcome" component={SplashScreen} />
+        <Stack.Screen name="Welcome" component={SingleEvent} />
 
 
         <Stack.Screen name="HomeScreen" component={MyTabs} />
