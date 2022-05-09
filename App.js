@@ -16,6 +16,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SplashScreen from './screens/splash/SplashScreen/SplashScreen';
 import SingleEvent from './screens/SingleEvent/SingleEvent'
 import BuyTicket from "./screens/BuyTicket/BuyTicket";
+import Checkout from "./screens/Checkout/Checkout";
+
 
 
 
@@ -42,6 +44,7 @@ function App() {
 
         <Stack.Screen name="SingleEvent" component={SingleEvent} />
         <Stack.Screen name="BuyTicket" component={BuyTicket} />
+        <Stack.Screen name="Checkout" component={Checkout} />
 
 
         <Stack.Screen name="HomeScreen" component={MyTabs} />

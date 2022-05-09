@@ -1,13 +1,19 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {View, Text, TouchableOpacity, useColorScheme,StyleSheet} from 'react-native'
 import {Icon} from "@rneui/base";
 import {colors, fonts, sizes} from "../../../../constant";
+
 import {useNavigation} from "@react-navigation/native";
 
-function BTFooter(){
+function CFooter(props){
   const btf=bt_footer
   const theme=useColorScheme();
   const navigation=useNavigation();
+  const [s_v,selectv]=useState(0)
+
+  useEffect(()=>{
+    selectv(props.t_value)
+  })
   return (
     <View>
       <View style={{display:'flex',flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
@@ -16,17 +22,24 @@ function BTFooter(){
           <View>
             <Text style={btf.text_1} >$67.00</Text>
           </View>
-          <TouchableOpacity onPress={()=>{
-            navigation.navigate('Checkout')
-          }} style={{height:50,backgroundColor:colors.green,width:'70%',borderRadius:10,display:'flex',justifyContent:'center',alignItems:'center',elevation:5}} activeOpacity={0.8}>
-            <Text style={btf.text_3}>Buy</Text>
-          </TouchableOpacity>
+
         </View>
+
       </View>
+      <TouchableOpacity  onPress={()=>{
+        navigation.navigate('Checkout')
+      }} style={{height:44,backgroundColor:colors.secondary,borderRadius:10,display:'flex',justifyContent:'center',alignItems:'center',elevation:5,marginTop:10}} activeOpacity={0.8}>
+        <View style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
+          <Text style={[btf.text_3,{marginRight:5}]}>Pay with </Text>
+          {s_v==0?(<Icon name={"apple-o"} size={20} color={colors.white} type={"antdesign"} />):(<View></View>)}
+          {s_v==1?(<Icon name={"cc-visa"} size={20} color={colors.white} type={"font-awesome"} />):(<View></View>)}
+          {s_v==2?(<Icon name={"bitcoin"} size={20} color={colors.white} type={"font-awesome-5"} />):(<View></View>)}
+        </View>
+      </TouchableOpacity>
     </View>
   )
 }
-export default  BTFooter;
+export default  CFooter;
 const bt_footer=StyleSheet.create({
   text_1: {
     fontSize: sizes.h16,
