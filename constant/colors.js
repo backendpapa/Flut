@@ -12,5 +12,7 @@ module.exports = {
 //  accent
   accent:"#F0F6F5",
 //  orangr
-  orange:"#DF6119"
+  orange:"#DF6119",
+//  intel grey
+  grey:"#C0BCBC"
 };
