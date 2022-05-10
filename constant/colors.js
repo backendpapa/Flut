@@ -14,5 +14,7 @@ module.exports = {
 //  orangr
   orange:"#DF6119",
 //  intel grey
-  grey:"#C0BCBC"
+  grey:"#C0BCBC",
+//  grey light
+  grey_light:"#F2F2F2"
 };
