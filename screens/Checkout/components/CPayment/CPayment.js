@@ -42,7 +42,6 @@ function CPayment(props){
                  checked={item.checked}
                  onPress={(e)=>{
                    let newArr = [...pmethod]; // copying the old datas array
-                   console.log(e.target.value)
                    newArr.forEach(s=>{
                      s.checked=false
                    })

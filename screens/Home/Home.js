@@ -3,7 +3,7 @@ import {View, Text, StatusBar, useColorScheme, StyleSheet, ScrollView} from 'rea
 import {colors} from "../../constant";
 import HomeLocation from "./components/HomeLocation/HomeLocation";
 import HomeMainCard from "./components/HomeMainCard/HomeMainCard";
-import HomeCard from "./components/HomeCard/HomeCard";
+import Card from "../_sharedComponents/Card/Card";
 
 
 //
@@ -32,14 +32,16 @@ function Home(){
        <View style={{marginTop:10}}>
           <HomeMainCard />
        </View>
-       <View style={{marginTop:20}}>
-        <ScrollView showsVerticalScrollIndicator={false} style={{height:400}}>
-          {events.map((item,i) => {
-            return <HomeCard key={i} title={item.title} date={item.date} location={item.location} img={item.img} />
-          })}
+      <View style={{flex:1}}>
+        <View style={{marginTop:20,height:'100%',overflow:'hidden'}}>
+          <ScrollView showsVerticalScrollIndicator={false} style={{height:'100%'}}>
+            {events.map((item,i) => {
+              return <Card key={i} title={item.title} date={item.date} location={item.location} img={item.img} />
+            })}
 
-        </ScrollView>
-       </View>
+          </ScrollView>
+        </View>
+      </View>
 
      </View>
     </View>

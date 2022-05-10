@@ -7,14 +7,14 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import {colors, fonts, sizes} from '../../../../constant';
+import {colors, fonts, sizes} from '../../../constant';
 
 // Help
-import one from '../../../../assets/images/1.png';
+import one from '../../../assets/images/1.png';
 import {Icon} from '@rneui/base';
 import {useNavigation} from "@react-navigation/native";
 
-function HomeCard(props) {
+function Card(props) {
   const hc = hc_style;
   const [like, setLike] = useState(false);
   const theme = useColorScheme();
@@ -86,7 +86,7 @@ function HomeCard(props) {
     </View>
   );
 }
-export default HomeCard;
+export default Card;
 const hc_style = StyleSheet.create({
   container: {
     height: 100,
