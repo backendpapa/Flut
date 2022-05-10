@@ -14,12 +14,21 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // Screens
 import SplashScreen from './screens/splash/SplashScreen/SplashScreen';
+
+import {colors} from "./constant";
+import {Icon} from "@rneui/base";
+//Home section
 import Home from './screens/Home/Home'
 import SingleEvent from './screens/SingleEvent/SingleEvent'
 import BuyTicket from "./screens/BuyTicket/BuyTicket";
 import Checkout from "./screens/Checkout/Checkout";
-import {colors} from "./constant";
-import {Icon} from "@rneui/base";
+
+//Search section
+import Search from "./screens/Search/Search";
+
+
+
+
 
 
 
@@ -36,7 +45,7 @@ function MyTabs() {
       })}} component={Home} />
       <Tab.Screen options={{tabBarIcon:(({focused,color,size})=>{
           return <Icon name={"search"} type={"octicon"} />
-        })}} name="Settings" component={SplashScreen} />
+        })}} name="Search" component={Search} />
       <Tab.Screen options={{tabBarIcon:(({focused,color,size})=>{
           return <Icon name={"ticket"} type={"foundation"} />
         })}} name="Settings2" component={SplashScreen} />
