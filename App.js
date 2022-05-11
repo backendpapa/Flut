@@ -27,6 +27,11 @@ import Checkout from "./screens/Checkout/Checkout";
 import Search from "./screens/Search/Search";
 
 
+//Ticket section
+import Ticket from "./screens/Ticket/Ticket";
+
+
+
 
 
 
@@ -48,7 +53,7 @@ function MyTabs() {
         })}} name="Search" component={Search} />
       <Tab.Screen options={{tabBarIcon:(({focused,color,size})=>{
           return <Icon name={"ticket"} type={"foundation"} />
-        })}} name="Settings2" component={SplashScreen} />
+        })}} name="Settings2" component={Ticket} />
       <Tab.Screen options={{tabBarIcon:(({focused,color,size})=>{
           return <Icon name={"hearto"} type={"antdesign"} />
         })}} name="Settings3" component={SplashScreen} />

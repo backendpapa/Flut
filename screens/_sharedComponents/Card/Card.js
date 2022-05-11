@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -16,12 +16,16 @@ import {useNavigation} from "@react-navigation/native";
 
 function Card(props) {
   const hc = hc_style;
+  const [type,setType]=useState('card-general')
   const [like, setLike] = useState(false);
   const theme = useColorScheme();
   const navigation = useNavigation()
+  useEffect(()=>{
+    setType(props.c_type)
+  })
   return (
     <View>
-      <TouchableOpacity onPress={()=>{
+      {type=='card-general'?(<TouchableOpacity onPress={()=>{
         navigation.navigate("SingleEvent")
       }} activeOpacity={0.8} style={[hc.container]}>
         <View>
@@ -82,7 +86,28 @@ function Card(props) {
             </TouchableOpacity>
           </View>
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity>):(<View>
+        <TouchableOpacity style={{marginBottom:20}} activeOpacity={0.8} >
+          <View style={hc.ticket_container}>
+            <View style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
+              <View>
+                <Icon name={"ticket"} type={"foundation"} size={27} color={theme=="dark"?colors.orange:colors.green} />
+              </View>
+              <View style={{marginLeft:20}}>
+                <Text style={[hc.text_1,{color:theme=="dark"?colors.white:colors.secondary}]}>{props.t_title}</Text>
+                <Text style={[hc.text_2,{color:theme=="dark"?colors.white:colors.secondary}]}>{props.t_date} </Text>
+              </View>
+            </View>
+            <View>
+              <Image source={props.t_img} resizeMethod={"scale"} resizeMode={"contain"} style={{height:70,width:50}} />
+            </View>
+
+          </View>
+          <View style={{marginTop:15}}>
+            <Text style={[hc.text_2,{color:theme=="dark"?colors.white:colors.secondary}]}>{props.t_ticket} Ticket</Text>
+          </View>
+        </TouchableOpacity>
+      </View>)}
     </View>
   );
 }
@@ -122,4 +147,10 @@ const hc_style = StyleSheet.create({
     right: 0,
     marginRight: 5,
   },
+  ticket_container:{
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between'
+  }
 });

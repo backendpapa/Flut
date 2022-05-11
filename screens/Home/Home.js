@@ -36,7 +36,7 @@ function Home(){
         <View style={{marginTop:20,height:'100%',overflow:'hidden'}}>
           <ScrollView showsVerticalScrollIndicator={false} style={{height:'100%'}}>
             {events.map((item,i) => {
-              return <Card key={i} title={item.title} date={item.date} location={item.location} img={item.img} />
+              return <Card c_type={'card-general'} key={i} title={item.title} date={item.date} location={item.location} img={item.img} />
             })}
 
           </ScrollView>

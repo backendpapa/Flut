@@ -61,7 +61,7 @@ function Search() {
             <View style={{height:'100%',overflow:'hidden'}}>
               <ScrollView showsVerticalScrollIndicator={false} style={{height:'100%'}}>
                 {events.map((item,i) => {
-                  return <Card key={i} title={item.title} date={item.date} location={item.location} img={item.img} />
+                  return <Card key={i} c_type={"card-general"} title={item.title} date={item.date} location={item.location} img={item.img} />
                 })}
               </ScrollView>
             </View>
