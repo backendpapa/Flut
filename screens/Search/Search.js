@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -16,6 +16,7 @@ import one from "../../assets/images/1.png";
 import two from "../../assets/images/2.png";
 import three from "../../assets/images/3.png";
 import Card from "../_sharedComponents/Card/Card";
+import SearchMainFilter from "./components/SearchMainFilter/SearchMainFilter";
 
 const events = [
   {title: "The Krooks",date: "Thu, Apr 19 · 20.00 Pm", location:"Razzmatazz",img:one},
@@ -29,6 +30,12 @@ const events = [
 function Search() {
   const s = s_style;
   const theme = useColorScheme();
+  const [showFilter,setShowFilter]=useState(false)
+
+  const showFilterFunction =(status)=>{
+    setShowFilter(status)
+  }
+
   return (
     <View
       style={{
@@ -40,23 +47,31 @@ function Search() {
         backgroundColor="transparent"
       />
       <View style={s.container}>
-       <SearchInput />
-        <View style={{marginTop:10}}>
-          <SearchFilter />
-        </View>
-        <View style={{marginTop:25}}>
-          <SearchInfo />
-        </View>
 
-        <View style={{marginTop:30,flex:1}}>
+        {showFilter==false?(<View style={{height:"100%"}}>
+          <SearchInput showstate={showFilter} filter={showFilterFunction} />
+          <View style={{marginTop:10}}>
+            <SearchFilter filter={showFilterFunction} />
+          </View>
+          <View style={{marginTop:25}}>
+            <SearchInfo />
+          </View>
+
+          <View style={{marginTop:30,flex:1}}>
             <View style={{height:'100%',overflow:'hidden'}}>
-                <ScrollView showsVerticalScrollIndicator={false} style={{height:'100%'}}>
-                  {events.map((item,i) => {
-                    return <Card key={i} title={item.title} date={item.date} location={item.location} img={item.img} />
-                  })}
-                </ScrollView>
+              <ScrollView showsVerticalScrollIndicator={false} style={{height:'100%'}}>
+                {events.map((item,i) => {
+                  return <Card key={i} title={item.title} date={item.date} location={item.location} img={item.img} />
+                })}
+              </ScrollView>
             </View>
-        </View>
+          </View>
+        </View>):(<View>
+          <SearchInput showstate={showFilter} filter={showFilterFunction} />
+         <View style={{marginTop:25}}>
+           <SearchMainFilter />
+         </View>
+        </View>)}
 
       </View>
     </View>

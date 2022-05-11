@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet, useColorScheme, TouchableOpacity, ScrollView} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import {colors, fonts, sizes} from "../../../../constant";
@@ -12,7 +12,7 @@ const eachfilters=[
   {title:"Football Commentary",selected:false},
 ]
 
-function SearchFilter(){
+function SearchFilter(props){
   const [filer,setFilter]=useState('')
   const [data,setData]=useState(eachfilters)
   const sf=sf_style
@@ -37,7 +37,12 @@ function SearchFilter(){
       return colors.secondary
     }
   }
+
+  useEffect(()=>{
+
+  })
   return (
+
     <View style={sf.container} >
 
 
@@ -45,7 +50,9 @@ function SearchFilter(){
       <View style={{display:'flex',flexDirection:'row',overflow:'hidden'}}>
       {/*  scrollview*/}
         <ScrollView horizontal={true} style={{width:'100%'}} showsHorizontalScrollIndicator={false}>
-          <TouchableOpacity activeOpacity={0.8} style={sf.filter_flex}>
+          <TouchableOpacity onPress={()=>{
+            props.filter(true)
+          }} activeOpacity={0.8} style={sf.filter_flex}>
             {/*  filters*/}
             <Text style={[sf.filter_text,{color:theme=='dark'? colors.white: colors.secondary}]}>Filter</Text>
             <Icon name={"down"} style={{marginLeft:5}} color={theme=='dark'? colors.white: colors.secondary} size={10} type={"antdesign"} />
