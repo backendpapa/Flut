@@ -17,7 +17,7 @@ function CFooter(props){
   return (
     <View>
       <View style={{display:'flex',flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
-        <Icon name={"shopping-outline"} type={"material-community"} color={theme=="dark"?colors.white:colors.secondary} />
+        <Icon name={"shopping-outline"} type={"material-community"} color={colors.secondary} />
         <View style={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-between'}}>
           <View>
             <Text style={btf.text_1} >$67.00</Text>

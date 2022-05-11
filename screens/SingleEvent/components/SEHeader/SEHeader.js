@@ -8,8 +8,11 @@ import {
 } from 'react-native';
 import event_img from '../../../../assets/images/event_img.png';
 import {Icon} from '@rneui/base';
+import {useNavigation} from "@react-navigation/native";
+
 
 function SEHeader() {
+  const navigation=useNavigation();
   const seh = se_header;
   const [like, setLike] = useState(false);
   return (
@@ -18,7 +21,9 @@ function SEHeader() {
         <View style={seh.inner_container}>
           <View>
             {/*  Back to previous screen icon*/}
-            <TouchableOpacity activeOpacity={0.8}>
+            <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+              navigation.goBack()
+            }}>
               <Icon
                 name={'arrow-left'}
                 color={'white'}
