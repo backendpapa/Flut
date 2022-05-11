@@ -31,6 +31,11 @@ import Search from "./screens/Search/Search";
 import Ticket from "./screens/Ticket/Ticket";
 
 
+//Favourite section
+import Favourite from "./screens/Favourite/Favourite";
+
+
+
 
 
 
@@ -56,7 +61,7 @@ function MyTabs() {
         })}} name="Settings2" component={Ticket} />
       <Tab.Screen options={{tabBarIcon:(({focused,color,size})=>{
           return <Icon name={"hearto"} type={"antdesign"} />
-        })}} name="Settings3" component={SplashScreen} />
+        })}} name="Settings3" component={Favourite} />
       <Tab.Screen options={{tabBarIcon:(({focused,color,size})=>{
           return <Icon name={"account-outline"} type={"material-community"} />
         })}} name="Settings4" component={SplashScreen} />
