@@ -33,6 +33,7 @@ import Ticket from "./screens/Ticket/Ticket";
 
 //Favourite section
 import Favourite from "./screens/Favourite/Favourite";
+import Profile from "./screens/Profile/Profile";
 
 
 
@@ -64,7 +65,7 @@ function MyTabs() {
         })}} name="Settings3" component={Favourite} />
       <Tab.Screen options={{tabBarIcon:(({focused,color,size})=>{
           return <Icon name={"account-outline"} type={"material-community"} />
-        })}} name="Settings4" component={SplashScreen} />
+        })}} name="Settings4" component={Profile} />
     </Tab.Navigator>
   );
 }
