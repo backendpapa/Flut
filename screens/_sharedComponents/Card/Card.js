@@ -22,6 +22,9 @@ function Card(props) {
   const navigation = useNavigation()
   useEffect(()=>{
     setType(props.c_type)
+    if(props.liked){
+      setLike(props.liked)
+    }
   })
   return (
     <View>
